@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyDays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoy every day!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-tv-ZnL">
+                                <rect key="frame" x="116" y="139" width="198" height="35"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specify your birthday:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfG-Ce-edb">
+                                <rect key="frame" x="127" y="204" width="176" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="FRV-v2-BRu">
+                                <rect key="frame" x="55" y="256" width="320" height="324"/>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="220791600">
+                                    <!--2007-12-31 11:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="0HN-7w-XgT"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW1-mx-a6K">
+                                <rect key="frame" x="155" y="600" width="120" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5xH-4b-PUU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="T9k-NA-N9W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Result">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resultButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="l4U-jk-LGQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're enjoying life already... days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0F-Rh-hoW">
+                                <rect key="frame" x="59" y="670" width="311" height="21.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="WW1-mx-a6K" firstAttribute="top" secondItem="FRV-v2-BRu" secondAttribute="bottom" constant="20" id="3gl-2L-EnR"/>
+                            <constraint firstItem="WW1-mx-a6K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9aj-sj-bMo"/>
+                            <constraint firstItem="FRV-v2-BRu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C8z-A7-W3t"/>
+                            <constraint firstItem="Y0F-Rh-hoW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="Gls-RP-x2J"/>
+                            <constraint firstItem="Hi3-tv-ZnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KNm-qi-b2m"/>
+                            <constraint firstItem="gfG-Ce-edb" firstAttribute="top" secondItem="Hi3-tv-ZnL" secondAttribute="bottom" constant="30" id="SmY-Hg-deF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y0F-Rh-hoW" secondAttribute="trailing" constant="60" id="Z4d-gu-voA"/>
+                            <constraint firstItem="Hi3-tv-ZnL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="h6P-Bo-Ec5"/>
+                            <constraint firstItem="FRV-v2-BRu" firstAttribute="top" secondItem="gfG-Ce-edb" secondAttribute="bottom" constant="30" id="hUn-zz-bP7"/>
+                            <constraint firstItem="gfG-Ce-edb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="na1-Z0-gey"/>
+                            <constraint firstItem="Y0F-Rh-hoW" firstAttribute="top" secondItem="WW1-mx-a6K" secondAttribute="bottom" constant="20" id="yc8-Yl-5X2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="Y0F-Rh-hoW" id="DyB-3W-9Pk"/>
+                        <outlet property="resultButton" destination="WW1-mx-a6K" id="jSR-ur-5Cc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
